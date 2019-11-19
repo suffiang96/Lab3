@@ -1,4 +1,5 @@
 ////adding map
+
 var map = L.map('map').setView([47.615428, -122.334145], 11);
 
 //adding tiles
@@ -29,14 +30,14 @@ L.geoJson(shakeData, {
   style: function(feature){
     var fillColor,
       percent = feature.properties.PERCENT_G;
-    if ( percent = 110-145 ) fillColor = '#800026';
-    else if( percent = 80-110 ) fillColor = '#BD0026';
-    else if ( percent = 60-80 ) fillColor = '#E31A1C';
-    else if ( percent = 50-60 ) fillColor = '#FC4E2A';
-    else if ( percent = 40-50 ) fillColor = '#FD8D3C';
-    else if ( percent = 30-40 ) fillColor = '#FEB24C';
-    else if ( percent = 20-30 ) fillColor = '#FED976';
-    else fillColor = '#FFFFFF';
+    if ( percent === "110-145" ) fillColor = '#800026';
+    else if ( percent === '80-110' ) fillColor = '#BD0026';
+    else if ( percent === '60-80' ) fillColor = '#E31A1C';
+    else if ( percent === '50-60' ) fillColor = '#FC4E2A';
+    else if ( percent === '40-50' ) fillColor = '#FD8D3C';
+    else if ( percent === '30-40' ) fillColor = '#FEB24C';
+    else if ( percent === '20-30' ) fillColor = '#FED976';
+    else fillColor === '#FFFFFF';
     return {color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
     },
 
@@ -45,8 +46,3 @@ L.geoJson(shakeData, {
       }
     }).addTo(map);
   });
-
-
-
-//L.geoJson(faultData).addTo(map);
-//});
