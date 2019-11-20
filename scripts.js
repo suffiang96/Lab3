@@ -32,7 +32,7 @@ L.geoJson(shakeData, {
     },
 
       onEachFeature: function( feature, layer ){
-        layer.bindPopup( "<strong>" + feature.properties.PERCENT_G + "</strong><br/>" + feature.properties.PERCENT_G + "% shaking hazard" )
+        layer.bindPopup( feature.properties.PERCENT_G + "% shaking hazard" )
       }
     }).addTo(map);
   });
