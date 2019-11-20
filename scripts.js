@@ -10,23 +10,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken:'pk.eyJ1Ijoic3VmZmlhbmc5NiIsImEiOiJjazJqb3V4cXAwbXN1M2N0cmNlMDB0ODdyIn0.bSVgjiBLodS46nfCU1cKMw'
 }).addTo(map);
 
-//load GeoJSON
-$.getJSON("Faults.zip.geojson",function(faultData){
-  L.geoJson (faultData, {
- style: function(feature){
-   return { color: 'black',
-          dashArray: '6',
-          weight: 2,
-          fillOpacity: 0.7 };
- },
- onEachFeature: function( feature, layer ){
-   layer.bindPopup( feature.properties.slip_sense + " type fault" )
- }
-  }).addTo(map);
-});
+map.createPane("polygonPane");
+map.createPane("linePane");
 
 $.getJSON("hazZones.geojson",function(shakeData){
 L.geoJson(shakeData, {
+  pane:"polygonPane",
   style: function(feature){
     var fillColor,
       percent = feature.properties.PERCENT_G;
@@ -39,6 +28,7 @@ L.geoJson(shakeData, {
     else if ( percent === '20-30' ) fillColor = '#FED976';
     else fillColor === '#FFFFFF';
     return {color: "#999", weight: 1, fillColor: fillColor, fillOpacity: .6 };
+
     },
 
       onEachFeature: function( feature, layer ){
@@ -46,3 +36,19 @@ L.geoJson(shakeData, {
       }
     }).addTo(map);
   });
+
+//load GeoJSON
+$.getJSON("Faults.zip.geojson",function(faultData){
+  L.geoJson (faultData, {
+ pane: "linePane",
+ style: function(feature){
+   return { color: 'black',
+          dashArray: '6',
+          weight: 4 ,
+          fillOpacity: 0.7 };
+ },
+ onEachFeature: function( feature, layer ){
+   layer.bindPopup( feature.properties.slip_sense + " type fault" )
+ }
+  }).addTo(map);
+});
