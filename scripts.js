@@ -44,7 +44,7 @@ $.getJSON("Faults.zip.geojson",function(faultData){
  style: function(feature){
    return { color: 'black',
           dashArray: '6',
-          weight: 4 ,
+          weight: 2.5 ,
           fillOpacity: 0.7 };
  },
  onEachFeature: function( feature, layer ){

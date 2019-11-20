@@ -6,24 +6,28 @@
 	 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="leaflet.js"> </script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://github.com/CliffCloud/Leaflet.Sleep/blob/master/Leaflet.Sleep.js"></script>
+
+<!-- 'Sleep' plug-in from https://github.com/CliffCloud/Leaflet.Sleep -->
+<script src="Leaflet.Sleep.js"></script>
+
 </head>
 <body>
 			<h1> Seattle Seismic Hazards & Faults </h1>
-				<h3> "This new view is particularly important for Seattle, which sits atop a sedimentary basin that strongly affects the patterns of earthquake ground shaking and therefore, of potential damage." -USGS </h3>
+			<h3> "This new view is particularly important for Seattle, which sits atop a sedimentary basin that strongly affects the patterns of earthquake ground shaking and therefore, of potential damage." -USGS </h3>
+			<p2> Hover over or click on the map to acitivate it's interactivity! </p2>
 	<div id="map"></div>
 	<script src= "scripts.js"> </script>
+
+	<br>
 		<h2> Further info </h2>
-		<p> The above map shows the hazard for ground shaking across the city of Seattle, WA. The surface wave frequency being mapped is 1 cycle per second (the frequency most dangerous to buildings of 10 stories and taller) with a 10% probability of exceedence (statistical metric describing the probability that a particular value will be met or exceeded) within the next 50 years. Essentially, the map shows where the shaking is going to be felt strongest in the event of an earthquake in Seattle.
+		<p> The above map shows the potential for ground shaking across the city of Seattle, WA. The surface wave frequency being mapped is 1 cycle per second (the frequency most dangerous to buildings of 10 stories and taller) with a 10% probability of exceedence (statistical metric describing the probability that a particular value will be met or exceeded) within the next 50 years. Essentially, the map shows where the shaking is going to be felt strongest in the event of an earthquake in Seattle.
 		<br>
 		Curious about a particular area? Click any of the color coded zones to learn it's shaking potential!
 		<br>
 	 	Seattle is host to two kinds of fault; reverse and thrust. Most of the faults are thrust type faults, see if you can guess which one is the reverse fault! You can find out what type of fault each one is by clicking on the dashed line. Thrust faults and reverse faults both move in the dip-slip type of motion, meaning these faults move vertically, just at different angles. Thrust faults move at less than 45 degrees and reverse faults move at an angle greater than 45 degrees.
-
 		</p>
 <br>
-<br>
 		<p2>Hazard data collected from the <a href="https://earthquake.usgs.gov/hazards/urban/seattle.php" target="_blank"> USGS Earthquake Hazards Program </a>
-		and fault data can be found <a href="https://earthquake.usgs.gov/hazards/qfaults/" target="_blank"> here </a> along with more information about what they are.
+		and fault data can be found <a href="https://earthquake.usgs.gov/hazards/qfaults/" target="_blank"> here </a> along with more information about earthquakes.
 		</p2>
 </html>
